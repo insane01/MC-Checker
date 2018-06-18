@@ -1,12 +1,60 @@
-﻿<Window x:Class="MC_Checker.MainWindow"
+﻿<Controls:MetroWindow
+        x:Class="MC_Checker.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MC_Checker"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MC Checker" Height="508" Width="250" MinHeight="508" MinWidth="250" MaxWidth="250" MaxHeight="508">
     <Grid>
-        
+        <GroupBox Header="Data" Height="132" VerticalAlignment="Top" Margin="0,5,0,0">
+            <Grid>
+                <Button Name="LoadAccountsBtn" Content="Load Accounts" VerticalAlignment="Top" Margin="2,2,2,0" Click="LoadAccountsBtn_Click"/>
+                <Button Name="LoadProxyBtn" Content="Load Proxy" VerticalAlignment="Top" Margin="2,35,2,0" Click="LoadProxyBtn_Click"/>
+                <Label Content="Proxy Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,69,0,0"/>
+                <ComboBox Name="ProxyTypeBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="75,69,0,0" SelectedIndex="0">
+                    <ComboBoxItem Content="No proxy"/>
+                    <ComboBoxItem Content="HTTP/S"/>
+                    <ComboBoxItem Content="Socks 4"/>
+                    <ComboBoxItem Content="Socks 5"/>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Controls" Height="100" VerticalAlignment="Top" Margin="0,142,0,0">
+            <Grid>
+                <Button Name="StartBtn" Content="Start" VerticalAlignment="Top" Margin="2,2,0,0" HorizontalAlignment="Left" Width="115" Click="StartBtn_Click"/>
+                <Button Name="StopBtn" Content="Stop" VerticalAlignment="Top" Margin="0,2,2,0" HorizontalAlignment="Right" Width="115" IsEnabled="False" Click="StopBtn_Click"/>
+                <Button Name="SettingsBtn" Content="Settings" VerticalAlignment="Top" Margin="2,35,2,0" Click="SettingsBtn_Click"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Controls" Height="225" VerticalAlignment="Top" Margin="0,247,0,0">
+            <Grid>
+                <Label Content="Accounts:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Proxy:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,26,0,0"/>
+
+                <Label Content="Goods:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,55,0,0"/>
+
+                <Label Content="Premium:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,81,0,0"/>
+                <Label Content="Secret Question:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,107,0,0"/>
+                <Label Content="Gifts:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,133,0,0"/>
+
+                <Label Content="Error:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,159,0,0"/>
+
+                <Label Name="AccountsLabel" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,0,0,0"/>
+                <Label Name="ProxyLabel" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,26,0,0"/>
+
+                <Label Name="GoodsLabel" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,55,0,0" Foreground="#FF088008"/>
+
+                <Label Name="PremiumLabel" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,81,0,0"/>
+                <Label Name="SQLabel" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,107,0,0"/>
+                <Label Name="GiftsLabel" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,133,0,0"/>
+
+                <Label Name="ErrorLabel" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,159,0,0" Foreground="Red"/>
+            </Grid>
+        </GroupBox>
+
+
     </Grid>
-</Window>
+</Controls:MetroWindow>
