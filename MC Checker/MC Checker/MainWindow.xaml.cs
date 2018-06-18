@@ -240,8 +240,6 @@ namespace MC_Checker
             string s = string.Empty;
             string acc = account.Email + ";" + account.Password;
 
-            MessageBox.Show(acc + " | " + account.IsValid);
-
             if (!account.IsValid)
             {
                 File.AppendAllText(Path + "bad.txt", acc + "\r\n");
